@@ -5,7 +5,7 @@
     using System.Windows.Media;
 
     /// <summary>
-    /// A work in progress
+    /// A useless experimental control
     /// </summary>
     public class FlowPanel : CustomPanel<UIElement>
     {

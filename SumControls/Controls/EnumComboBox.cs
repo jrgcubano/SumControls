@@ -58,7 +58,7 @@
             set { SetValue(EnumValuesProperty, value); }
         }
 
-        #region Dependency property related data
+        #region Dependency property methods
 
         /// <summary>
         /// Updates the items when the EnumType property is changed
@@ -81,7 +81,7 @@
             return type == null || type.IsEnum;
         }
 
-        #endregion Dependency property related data
+        #endregion Dependency property methods
 
         /// <summary>
         /// Updates the items the EnumComboBox displays
@@ -94,8 +94,7 @@
                 enumValues.AddRange(from Enum value in Enum.GetValues(EnumType)
                 let id = value.GetId()
                 let name = value.GetValue()
-                select new KeyValuePair<string, string>(string.IsNullOrEmpty(id) ?
-                                                                                     name : id, name));
+                select new KeyValuePair<string, string>(string.IsNullOrEmpty(id) ? name : id, name));
 
                 EnumValues = enumValues.ToArray();
             }
